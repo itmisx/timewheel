@@ -100,7 +100,9 @@ func (tw *TimeWheel) AddTimer(timerID string, interval time.Duration, data inter
 	}
 	// 已经存在的定时器id，将会停止旧的定时器，并创建新的定时器
 	if _, ok := tw.timerRecordMap[timerID]; ok {
+		tw.mu.Unlock()
 		tw.StopTimer(timerID)
+		tw.mu.Lock()
 	}
 	// 计算定时器要插入的位置
 	calSlotPos := (tw.currentPos + int(tm.interval)/int(tw.slotInterval)) % tw.slotNum // calculate the timer's wheel
