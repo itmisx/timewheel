@@ -2,8 +2,6 @@
 
 > 时间轮，是一种实现延迟功能（定时器）的巧妙算法，在 Netty，Zookeeper，Kafka 等各种框架中，甚至 Linux 内核中都有用到。
 
-
-
 #### 安装
 
 `go get -u -v github.com/itmisx/timewheel`
@@ -19,7 +17,7 @@
 	// timerID，定时器id，用来删除定时器
 	// 参数1-string，定时器id，相同的定时器id会覆盖旧的定时器
 	// 参数2-time.Duration，定时器间隔
-	// 参数3-interfaceP{}，定时器数据，将传递到回调函数
+	// 参数3-interface{}，定时器数据，将传递到回调函数
 	timewheel.AddTimer("timerID", time.Second*3, "data")
 	// 停止定时器
 	// 参数-string，定时器的id
@@ -37,7 +35,7 @@
 	// timerID，定时器id，用来删除定时器
 	// 参数1-string，定时器id，相同的定时器id会覆盖旧的定时器
 	// 参数2-time.Duration，定时器间隔
-	// 参数3-interfaceP{}，定时器数据，将传递到回调函数
+	// 参数3-interface{}，定时器数据，将传递到回调函数
 	tw.AddTimer("timerID", time.Second*3, "data")
 	tw.Stop()
 }
