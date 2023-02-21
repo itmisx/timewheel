@@ -138,7 +138,8 @@ func (tw *TimeWheel) StopTimer(timerID string) (success bool) {
 	}
 	l := tw.wheelTimerList[tw.timerRecordMap[timerID].wheel][tw.timerRecordMap[timerID].slot]
 	el := tw.timerRecordMap[timerID].el
-	if el == nil {
+	// 空队列及空元素判断拦截，避免crash
+	if l == nil || el == nil {
 		return
 	}
 	l.Remove(el)
