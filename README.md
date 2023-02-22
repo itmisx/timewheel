@@ -12,7 +12,7 @@
 // 直接函数调用
 {
 	// 启动时间轮
-	// 参数-func(interface{})
+	// 参数-func(interface{}),定时器过期回调函数，参数为AddTimer传入的值，类型为interface{}
 	timewheel.Start(callback)
 	// timerID，定时器id，用来删除定时器
 	// 参数1-string，定时器id，相同的定时器id会覆盖旧的定时器
