@@ -2,11 +2,11 @@
 
 > 时间轮，是一种实现延迟功能（定时器）的巧妙算法，在 Netty，Zookeeper，Kafka 等各种框架中，甚至 Linux 内核中都有用到。
 
-#### 安装
+#### 🎉 安装
 
 `go get -u -v github.com/itmisx/timewheel`
 
-#### 使用
+#### ✅ 使用
 
 ```go
 // 直接函数调用
