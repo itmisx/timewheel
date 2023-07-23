@@ -149,6 +149,8 @@ func (tw *TimeWheel) StopTimer(timerID string) (success bool) {
 	}
 	l.Remove(el)
 	tw.wheelTimerList[tw.timerRecordMap[timerID].wheel][tw.timerRecordMap[timerID].slot] = l
+	// 删除定时器记录
+	delete(tw.timerRecordMap, timerID)
 	return true
 }
 
