@@ -11,17 +11,6 @@ func callback(data interface{}) {
 	log.Println(data)
 }
 
-// 直接函数调用
-func TestTimeWheel(t *testing.T) {
-	DefaultSlotNum = 3
-	Start(callback)
-	AddTimer("a", time.Second*3, 1)
-	AddTimer("b", time.Second*4, 1)
-	AddTimer("c", time.Second*7, 1)
-	time.Sleep(time.Second * 10)
-	Stop()
-}
-
 // 结构体方法调用
 func TestTimeWheelNew(t *testing.T) {
 	tw := New(time.Second, 60, callback)

@@ -194,20 +194,3 @@ func (tw *TimeWheel) tickerHandler() {
 	// 删除时间槽的定时器链表
 	delete(tw.wheelTimerList[tw.currentWheel], tw.currentPos)
 }
-
-func Start(callback func(interface{})) {
-	tw = New(DefaultSlotInterval, DefaultSlotNum, callback)
-	tw.Start()
-}
-
-func AddTimer(key string, interval time.Duration, data interface{}) {
-	tw.AddTimer(key, interval, data)
-}
-
-func StopTimer(key string) {
-	tw.StopTimer(key)
-}
-
-func Stop() {
-	tw.Stop()
-}
