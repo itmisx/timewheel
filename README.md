@@ -9,22 +9,6 @@
 #### ✅ 使用
 
 ```go
-// 直接函数调用
-{
-	// 启动时间轮
-	// 参数-func(interface{}),定时器过期回调函数，参数为AddTimer传入的值，类型为interface{}
-	timewheel.Start(callback)
-	// timerID，定时器id，用来删除定时器
-	// 参数1-string，定时器id，相同的定时器id会覆盖旧的定时器
-	// 参数2-time.Duration，定时器间隔
-	// 参数3-interface{}，定时器数据，将传递到回调函数
-	timewheel.AddTimer("timerID", time.Second*3, "data")
-	// 停止定时器
-	// 参数-string，定时器的id
-	timewheel.StopTimer("timerID")
-	timewheel.Stop()
-}
-
 // 结构体方法调用
 {
 	// 参数1-time.Duration,时间轮精度
