@@ -14,7 +14,12 @@
 	// 参数1-time.Duration,时间轮精度
 	// 参数2-int,时间槽数量
 	// 参数3-func(interface{}),定时器过期回调函数
-	tw := timewheel.New(time.Second, 60, callback)
+	tw := timewheel.New(time.Second, 60, func(data interface{}){
+           // 参数类型断言
+           param:= data.(type)
+           // 业务逻辑
+           // todo ... 
+        })
 	tw.Start()
 	// timerID，定时器id，用来删除定时器
 	// 参数1-string，定时器id，相同的定时器id会覆盖旧的定时器
